@@ -2,10 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    No Assignment.
+    <a-scene>
+        <!-- เพิ่มข้อความ -->
+        <a-text value="Work 2" position="-2 2.5 -4" color="#fff" scale="2 2 2"></a-text>
+        <a-text value="643021232-2 Thanchira Mueangsaen"
+                position="-6 2.2 -6"
+                color="#000033"
+                scale="2 2 2"
+                opacity="0.8"
+                font="https://cdn.aframe.io/fonts/Exo2Bold.fnt"
+                animation__scale="property: scale; dir: alternate; dur: 1000; easing: easeInOutQuad; loop: true; to: 2.2 2.2 2.2">
+        </a-text>        </a-entity>
+        </a-box>
+        <a-box src="images/me.jpg" position="-1 1 -3" rotation="0 45 0" animation="property: rotation; to: 0 405 0; dur: 3000; easing: linear; loop: true">
+        <a-sphere src="images/cat.jpg"position="2 1 -3" radius="1" color="#FFC65D" animation="property: rotation; to: 0 360 0; dur: 3000; easing: linear; loop: true"></a-sphere>
+        <a-sphere src="images/cat1.jpg" position="1 0 6" radius="1" color="#fff" animation="property: rotation; to: 0 360 0; dur: 3000; easing: linear; loop: true"></a-sphere>
+        <a-entity position="4 2 -3" rotation="0 0 0">
+            <a-cylinder src="images/dg.jpg"radius="0.5" height="1.5" color="#99CCFF">
+                <a-animation attribute="rotation"
+                             dur="2000"
+                             easing="easeInOutQuad"
+                             to="0 180 0"
+                             repeat="indefinite"
+                             direction="alternate"></a-animation>
+            </a-cylinder>
+        </a-entity>
+        </a-box>
+        <a-text value="Hello Welcome" position="-2.4 0 -3" color="#fff" scale="2 2 2"></a-text>
+ 
+
+        <!-- นำภาพที่ได้มาใช้เป็นพื้นหลัง -->
+        <a-sky src="images/room.jpeg"></a-sky>
+    </a-scene>
 </body>
 </html>
