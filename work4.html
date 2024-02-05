@@ -50,8 +50,7 @@
             start() {
                 this.cardsOpened = [];
                 this.setState({ scene: 1, cards: this.shuffle(), cardsCount: 36 });
-            }
-
+            }            
 
             shuffle() {
                 var cards = [];
@@ -74,17 +73,18 @@
                 var b = this.cardsOpened[1];
                 this.cardsOpened = [];
                 if (a.props.t == b.props.t) {
-                  a.setState({ s: 2 });
-                  b.setState({ s: 2 });
-                  this.setState({ cardsCount: this.state.cardsCount-2 });
+                    a.setState({ s: 2 });
+                    b.setState({ s: 2 });
+                    this.setState(prevState => ({ cardsCount: prevState.cardsCount - 2 }), () => {
+                        if (this.state.cardsCount === 0) {
+                            this.setState({ scene: 2 });
+                        }
+                    });
                 } else {
-                  a.setState({ s: 0 });
-                  b.setState({ s: 0 });
+                    a.setState({ s: 0 });
+                    b.setState({ s: 0 });
                 }
-                if (this.cardsCount == 0) {  // เมื่อ cards ถูกเปิดจนหมด ให้แสดงหน้าชนะ
-                  this.setState({ scene: 2 });
-                }
-              }
+            }                      
             }      
         class Card extends React.Component {
             state = { s: 0 };
@@ -148,7 +148,7 @@
                     </button>
                 </div>
             );
-        }
+        }             
         function WinScene({ app }) {
             console.log("WinScene Rendered");
             return (
