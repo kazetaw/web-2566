@@ -1,3 +1,5 @@
 {
-    "liveServer.settings.port": 5502
+    "liveServer.settings.port": 5502,
+    "liveServer.settings.multiRootWorkspaceName": "web-2566",
+    "liveServer.settings.CustomBrowser": "microsoft-edge"
 }
